@@ -17,15 +17,19 @@ if __name__ == "__main__":
             Economy :  "http://www.yes24.com/24/Category/NewProductList/001001025?sumGb=01&ParamSortTp=05"
         }
     
-    for cat, url in category:
+    result = ''
+    issue_title = f"YES24 {", ".join(category.keys())} 신간 도서 알림({today_date})"
+    
+    for cat, url in category.items():
+        result += f"{cat} + <br/>\n"
         yes24_it_new_product_url = url
 
         soup = parsing_beautifulsoup(yes24_it_new_product_url)
 
-        issue_title = f"YES24 {cat} 신간 도서 알림({today_date})"
-        upload_contents = extract_book_data(soup)
-        repo = get_github_repo(access_token, repository_name)
-        upload_github_issue(repo, issue_title, upload_contents)
+        
+        upload_contents = result += extract_book_data(soup)
+    repo = get_github_repo(access_token, repository_name)
+    upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
 
 
