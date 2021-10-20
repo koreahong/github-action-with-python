@@ -2,7 +2,7 @@ name: yes24_crawler
 
 on:
   schedule:
-    - cron: '31 9 * * *'
+    - cron: '38 9 * * *'
 
 jobs:
   build:
