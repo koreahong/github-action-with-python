@@ -34,7 +34,8 @@ def extract_book_data(soup):
         url = url_prefix + url_suffix
         price = new_book.select(".priceB")[0].text
         read = description.text.replace('\t', '')
-        content = f"<a href={url}>" + book_name + "</a>" + ", " + price + "<br/>\n" + read + "<br/>\n"
+        content = f"<a href={url}>" + book_name + "</a>" + ", " + price + "<br/>\n"
+        content += read + "<br/>\n"
         upload_contents += content
 
     return upload_contents
