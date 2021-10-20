@@ -12,7 +12,7 @@ if __name__ == "__main__":
     today = datetime.now(seoul_timezone)
     today_date = today.strftime("%Y년 %m월 %d일")
     category = {
-            'IT' : "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01",
+            'IT' : "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01&ParamSortTp=05",
             'Economy' :  "http://www.yes24.com/24/Category/NewProductList/001001025?sumGb=01&ParamSortTp=05"
         }
     
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     issue_title = f"YES24 {', '.join(category.keys())} 신간 도서 알림({today_date})"
     
     for cat, url in category.items():
-        upload_contents += f"<h1>{cat}</h1> + <br/>\n"
+        upload_contents += f"<h1>{cat}</h1>" + "<br/>\n"
         yes24_it_new_product_url = url
 
         soup = parsing_beautifulsoup(yes24_it_new_product_url)
