@@ -12,15 +12,20 @@ if __name__ == "__main__":
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
     today_date = today.strftime("%Y년 %m월 %d일")
+    category = {
+            IT : "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01",
+            Economy :  "http://www.yes24.com/24/Category/NewProductList/001001025?sumGb=01&ParamSortTp=05"
+        }
+    
+    for cat, url in category:
+        yes24_it_new_product_url = url
 
-    yes24_it_new_product_url = "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01"
-    
-    soup = parsing_beautifulsoup(yes24_it_new_product_url)
-    
-    issue_title = f"YES24 IT 신간 도서 알림({today_date})"
-    upload_contents = extract_book_data(soup)
-    repo = get_github_repo(access_token, repository_name)
-    upload_github_issue(repo, issue_title, upload_contents)
+        soup = parsing_beautifulsoup(yes24_it_new_product_url)
+
+        issue_title = f"YES24 {cat} 신간 도서 알림({today_date})"
+        upload_contents = extract_book_data(soup)
+        repo = get_github_repo(access_token, repository_name)
+        upload_github_issue(repo, issue_title, upload_contents)
     print("Upload Github Issue Success!")
 
 
