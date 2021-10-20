@@ -19,7 +19,7 @@ if __name__ == "__main__":
         }
     
     upload_contents = ''
-    issue_title = f"YES24 {', '.join(category.keys())} 신간 도서 알림({today_date})"
+    issue_title = f"YES24 {', '.join(category.keys())} - 신간 도서 알림({today_date})"
     
     for cat, url in category.items():
         upload_contents += f"<h1>{cat}</h1>" + "<br/>\n"
