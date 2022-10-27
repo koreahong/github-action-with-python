@@ -12,10 +12,10 @@ if __name__ == "__main__":
     today = datetime.now(seoul_timezone)
     today_date = today.strftime("%Y년 %m월 %d일")
     category = {
-            'IT': "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01&ParamSortTp=05&FetchSize=80",
-            '경제/경영': "http://www.yes24.com/24/Category/NewProductList/001001025?sumGb=01&ParamSortTp=05&FetchSize=80",
-            '인문학': "http://www.yes24.com/24/Category/NewProductList/001001019?sumGb=01&ParamSortTp=05&FetchSize=80",
-            '자기계발': "http://www.yes24.com/24/Category/NewProductList/001001026?sumGb=01&ParamSortTp=05&FetchSize=80"
+            'IT': "http://www.yes24.com/24/Category/NewProductList/001001003?sumGb=01&ParamSortTp=05&FetchSize=40",
+            '경제/경영': "http://www.yes24.com/24/Category/NewProductList/001001025?sumGb=01&ParamSortTp=05&FetchSize=40",
+            '인문학': "http://www.yes24.com/24/Category/NewProductList/001001019?sumGb=01&ParamSortTp=05&FetchSize=40",
+            '자기계발': "http://www.yes24.com/24/Category/NewProductList/001001026?sumGb=01&ParamSortTp=05&FetchSize=40"
         }
     
     upload_contents = ''
